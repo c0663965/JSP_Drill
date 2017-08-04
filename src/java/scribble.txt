@@ -1,0 +1,42 @@
+        
+
+
+
+<%@page import="mypkg.Person"%>
+<%@page import="java.util.Arrays"%>
+<%@page import="java.util.Map"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.ArrayList"%>
+
+<hhml>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+
+    <body>
+    <%
+        HashMap<String, Person> data = new HashMap<>();
+
+
+            data.put("kihoon", new Person("male","Seoul",32));
+            data.put("jihoon", new Person("male","Daegu",62));
+            data.put("jungan", new Person("female","Pusan",72));
+            
+
+           out.println("<table>");
+           for (String key:data.keySet())
+           {   
+               out.print("<tr><td>"+key+"</td>");
+
+                    out.print("<td>"+data.get(key).getName() +"</td>");
+                    out.print("<td>"+data.get(key).getGender() +"</td>");
+                    out.print("<td>"+data.get(key).getAge() +"</td>");
+
+               out.print("</tr>");
+           }
+           out.println("</table>");
+    %>
+    </body>
+</html>
